@@ -16,36 +16,22 @@ namespace LogSharper
     /// </summary>
     public class LogSharper
     {
-        /// <summary>
-        /// VersionString of LogSharper
-        /// </summary>
         private static string Version = "1.0";
-        /// <summary>
-        /// Gets the version of LogSharper
-        /// </summary>
-        /// <returns>Version of LogSharper</returns>
         public static string GetVersion()
         {
             return Version;
         }
 
-        /// <summary>
-        /// Displays basic info about the logger
-        /// </summary>
         public static void LogLoggerInfo()
         {
             Logger.Info("LogSharper, (An attempt at making) A simple Single-File logger solution in c#, made by Jurij15, Version " + GetVersion());
         }
 
-        /// <summary>
-        /// Sets up the logger
-        /// </summary>
-        /// <param name="showSucessMessage">if true, displays a simple message</param>
         public static void Setup(bool showSucessMessage)
         {
             if (showSucessMessage)
             {
-                Logger.Info("LogSharper Initialized!");
+                Logger.Info("Logger Initialized!");
             }
         }
     }
@@ -81,7 +67,7 @@ namespace LogSharper
                 LoggerInternal.Log_SettingChanged("LogToFile", LogType);
             }
         }
-        public static void LogFileSettingChange(string newValue, bool logChange, Logger.LogTypes LogType)
+        public static void LogFileSettingChanged(string newValue, bool logChange, Logger.LogTypes LogType)
         {
             LoggerProperties.LogFile = newValue;
             if (logChange)
@@ -93,8 +79,6 @@ namespace LogSharper
 
     /// <summary>
     /// Properties, for internal use
-    /// 
-    /// DO NOT CHAGE ANY VALUES! USE LoggerSettings TO CHANGE THEM!
     /// </summary>
     public static class LoggerProperties
     {
